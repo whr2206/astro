@@ -1,7 +1,7 @@
 ---
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
-
+import BaseLayout from '../layouts/baselayout.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -44,10 +44,8 @@ const textCase = "capitalize";
         </style>
 	</head>
 		<body>
-
-            <Header />
-
-            <h1>{pageTitle}</h1>
+            <BaseLayout>
+                <h1>{pageTitle}</h1>
                 <p>Here are some deets</p>
                     <ul>
                         <li>I live in {identity.country} and I work as a {identity.occupation}</li>
@@ -63,6 +61,6 @@ const textCase = "capitalize";
                     {happy && <p>I am happy to be learning Astro!</p>}
                     {finished && <p>I finished this tutorial!</p>}
                     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days</p>}
-            <Footer />  
+            </BaseLayout>
           </body>
 </html>
