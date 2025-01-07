@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/markdownpostlayout.astro
 title: 'My First Blog Post'
 pubDate: 2025-01-01
 description: 'This is my first newbie post.'
@@ -9,8 +10,6 @@ image:
 tags: ["astro","blogs","learning"]
 ---
 # My First Blog Post
-
-Published on: 2024-01-01
 
 Welcome to my new blog about this tutorial.
 
