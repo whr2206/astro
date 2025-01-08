@@ -7,7 +7,7 @@ image:
     url: "https://docs.astro.build/default-og-image.png"
     alt: "The word astro against an illustration of planets and stars."
 pubDate: 2022-08-08
-tags: ["astro", "successes"]
+tags: ["translation","astro","CAT tools"]
 ---
 Ut labore magna ut Lorem eiusmod pariatur qui nisi consectetur laboris amet nulla. Voluptate ad incididunt dolor cupidatat. Irure exercitation magna aute sit exercitation. Consequat aliquip dolor fugiat officia et.
 

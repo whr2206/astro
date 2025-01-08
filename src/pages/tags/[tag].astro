@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../../layouts/baselayout.astro';
+import BlogPost from '../../components/blogpost.astro'
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
+
+export async function getStaticPaths() {
+    const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+  return [
+    { params: { tag: "localization"}, props: {posts: allPosts}},
+    { params: { tag: "internationalization"}, props: {posts: allPosts}},
+    { params: { tag: "translation"}, props: {posts: allPosts }},
+    { params: { tag: "monetization"}, props: {posts: allPosts }},
+    { params: { tag: "playtesting"}, props: {posts: allPosts }},
+    { params: { tag: "regexp"}, props: {posts: allPosts }},
+  ];
+}
+
+---
+<BaseLayout pageTitle={tag}>
+    <ul>
+        {filteredPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+    </ul>
+</BaseLayout>

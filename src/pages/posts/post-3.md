@@ -7,7 +7,7 @@ image:
     url: "https://docs.astro.build/assets/rays.webp"
     alt: "The Astro logo on a dark background with rainbow rays."
 pubDate: 2022-07-15
-tags: ["astro", "learning in public", "setbacks", "community"]
+tags: ["translation"]
 ---
 Ad proident ad sint ut tempor eu do. Ea quis enim aute anim proident quis laboris aute. Proident commodo Lorem ut fugiat do tempor esse ipsum dolor veniam voluptate. Culpa culpa cillum magna eiusmod cupidatat non ipsum officia laboris ex ullamco quis.
 

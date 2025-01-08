@@ -2,12 +2,13 @@
 layout: ../../layouts/markdownpostlayout.astro
 title: 'My First Blog Post'
 pubDate: 2025-01-01
+updatedDate: 
 description: 'This is my first newbie post.'
 author: 'Huge NoOb'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
-tags: ["astro","blogs","learning"]
+tags: ["localization", "playtesting"]
 ---
 
 Welcome to my new blog about this tutorial.
