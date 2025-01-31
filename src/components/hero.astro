@@ -1,0 +1,101 @@
+---
+---
+<!-- HERO START-->
+<main class="hero-wrapper">
+    <div class="hero-container">
+        <div class="hero-left">
+            <img class="hero-globe" src="/paper_globe.png"
+                 srcset="/paper_globe_s.png 300w,
+                          /paper_globe_m.png 500w,
+                          /paper_globe.png 750w"
+                 alt="a cartoon style globe with clouds">
+        </div>
+        <div class="hero-right">
+            <h1 class="hero-cta">Scale your success, not your costs.</h1>
+            <button class="cta-button">Let's talk</button>
+        </div>
+    </div>
+  </main>
+
+<style>
+    .hero-wrapper {
+  background-color: var(--sauce-cyan);
+  padding-top: 3.5rem;
+}
+
+.hero-container {
+  background-color: var(--sauce-cyan);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    padding-bottom: 2rem;
+  }
+}
+
+.hero-globe {
+  width: 100%; /* or a fixed width, depending on your design */
+  height: auto; /* maintain aspect ratio */
+}
+
+.hero-left {
+  background-image: image-set(
+    url('/paper_globe_s.png')x1,
+    url('/paper_globe_m.png')x2,
+    url('/paper_globe.png')x3
+  );
+}
+
+img.hero-globe {
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-right {
+  text-align: left;
+  font-size: 2rem;
+}
+
+.cta-button {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--sauce-gunmetal);
+  text-transform: uppercase;
+  background-color: var(--sauce-powder);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 8px 8px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: var(--sauce-orange);
+}
+</style>
