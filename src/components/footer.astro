@@ -1,17 +1,105 @@
 ---
-import Social from './social.astro';
 ---
-<style>
-    footer {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-</style>
-
-
 <footer>
-    <Social platform="twitter" username="astodotbuild" />
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
+    <div class="footer-wrapper">
+
+        <div class="footer-logo">
+            <h4 class="footer-heading">Secret Sauce</h4>
+          <img class="sauce-logo-white" src="../public/white.png" alt="A cursive S logo">
+        </div>
+        <div class="footer-link-list">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="contact-us-list">
+          <h4 class="footer-heading">Find Us On</h4>
+            <ul class="footer-links">
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">WeChat</a></li>  
+            </ul>
+        </div>
+    </div>
+    <span class="copyright-stuff">
+      © 2016-2025 Secret Sauce Ltd. All rights reserved.
+    </span>
 </footer>
+
+<style>
+/* =====
+FOOTER SECTION
+===== */
+
+footer {
+  background-color: var(--sauce-blue);
+  color: var(--sauce-cyan);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+}
+
+.footer-heading {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sauce-logo-white {
+  max-width: 100px;
+  height: auto;
+  display: block; /* remove default inline display */
+  margin: 0 auto; /* center the image horizontally */
+}
+
+.footer-link-list ul,
+.contact-us-list ul {
+  list-style: none; /* remove bullet points */
+  padding: 0; /* remove default padding */
+  margin: 0; /* remove default margin */
+  text-align: center; /* center the text */
+}
+
+.footer-links li {
+  list-style-type: none;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--sauce-cyan);
+}
+
+.footer-links a:hover {
+  color: var(--sauce-powder);
+}
+
+.copyright-stuff {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 2rem;
+}
+</style>
