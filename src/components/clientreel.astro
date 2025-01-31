@@ -1,0 +1,67 @@
+---
+---
+<div class="customer-wrapper">
+    <div class="customer-container">
+      <span class="customer-heading">Companies we've helped</span>
+        <div class="customer-logos">
+          <img src="/netease.png" alt="NetEase logo">
+          <img src="/tencent_logo.png" alt="Tencent logo">
+          <img src="/yostar.png" alt="Yostar logo">
+          <img src="/37games_en.png" alt="37 Games logo">
+          <img src="/byd.png" alt="BYD logo">
+          <img src="/gac_motor.png" alt="GAC motor logo">
+          <img src="/sg.webp" alt="China State Grid logo">
+          <!-- LOGOS REPEATED FOR SCROLL EFFECT-->
+          <img src="/netease.png" alt="NetEase logo">
+          <img src="/tencent_logo.png" alt="Tencent logo">
+          <img src="/yostar.png" alt="Yostar logo">
+          <img src="/37games_en.png" alt="37 Games logo">
+          <img src="/byd.png" alt="BYD logo">
+          <img src="/gac_motor.png" alt="GAC motor logo">
+          <img src="/sg.webp" alt="China State Grid logo">
+        </div>
+    </div>
+  </div>
+
+<style>
+.customer-wrapper {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.customer-container {
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 3rem;
+}
+
+.customer-heading {
+  font-size: 1.5rem;
+  color: var(--sauce-gunmetal);
+}
+
+.customer-logos {
+  display: flex;
+  animation: scroll 50s linear infinite;
+  padding-top: 2rem;
+}
+
+.customer-logos img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 2rem;
+  filter: grayscale(100%);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>
