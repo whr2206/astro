@@ -2,40 +2,66 @@
 import BaseLayout from './baselayout.astro';
 const { frontmatter } = Astro.props;
 ---
-<style>
-    a {
-      color: #00539F;
-    }
-  
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .tag {
-      margin: 0.25em;
-      border: dotted 1px #a1a1a1;
-      border-radius: .5em;
-      padding: .5em 1em;
-      font-size: 1.15em;
-      background-color: #F8FCFD;
-    }
-  </style>
+<BaseLayout>
+  <div class="blog-post-container">
+    <div class="content-container">
+      <h1 class="blog-post-title">{frontmatter.title}</h1>
+      <dl>
+        <dt>Published:</dt>
+        <dd>{frontmatter.pubDate.toString().slice(0,10)}</dd>
+        
+        <dt>Updated:</dt>
+        <dd>{frontmatter.updatedDate && frontmatter.updatedDate.toString().slice(0,10)}</dd>
+        
+        <dt>Author:</dt>
+        <dd>{frontmatter.author}</dd>
 
-<BaseLayout pageTitle={frontmatter.title}>
-    <p>Published: {frontmatter.pubDate.toString().slice(0,10)}</p>
-    {frontmatter.updatedDate && (
-        <p>Updated: {frontmatter.updatedDate.toString().slice(0,10)}</p>
-    )}
-    <p>Written by {frontmatter.author}</p>
-    <p>Tags: {frontmatter.tags.join(', ')}</p>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-
-    <div class="tags">
-        {frontmatter.tags.map((tag: string) => (
-          <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-        ))}
+        <dt>Tags:</dt>
+        <dd>{frontmatter.tags.join(', ')}</dd>
+      </dl>
+      <slot />
     </div>
-
-    <slot />
+  </div>
 </BaseLayout>
+
+<style>
+  .blog-post-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: calc(90px + 2rem);
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 1024px) {
+    .blog-post-container {
+      max-width: 90%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .blog-post-container {
+      max-width: 85%;
+    }
+  }
+
+.content-container {
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  flex: 1; /* take up the remaining space */
+}
+
+</style>
