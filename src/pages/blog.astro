@@ -1,24 +1,7 @@
 ---
 import BaseLayout from '../layouts/baselayout.astro';
-import BlogPost from '../components/blogpost.astro';
 import '../styles/global.css';
-const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
-const pageTitle = "My Blog"
 ---
+<BaseLayout>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<BaseLayout pageTitle={pageTitle}>
-                <ul>
-					{allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
-                </ul>
-		</BaseLayout>
-	</body>
-</html>
+</BaseLayout>
