@@ -12,7 +12,7 @@ import '../styles/global.css';
             Filter Tags Here
         </div>
         <div class="article-card-container">
-            <div class="article card">
+            <div class="article-card">
                 <h3>Blog Post title</h3>
                 <p class="blog-summary">
                     Here's a summary of a blog post. I'm not sure how
@@ -20,7 +20,7 @@ import '../styles/global.css';
                     so we can determine blah blah words blah blah.
                 </p>
             </div>
-            <div class="article card">
+            <div class="article-card">
                 <h3>Blog Post title</h3>
                 <p class="blog-summary">
                     Here's a summary of a blog post. I'm not sure how
@@ -28,7 +28,7 @@ import '../styles/global.css';
                     so we can determine blah blah words blah blah.
                 </p>
             </div>
-            <div class="article card">
+            <div class="article-card">
                 <h3>Blog Post title</h3>
                 <p class="blog-summary">
                     Here's a summary of a blog post. I'm not sure how
@@ -46,5 +46,34 @@ import '../styles/global.css';
         margin: 0 auto;
         margin-top: calc(90px + 2rem);
         margin-bottom: 2rem;
+    }
+
+    @media (max-width: 1024px){
+        .blog-index-container {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width: 768px){
+        .blog-index-container {
+            max-width: 85%;
+        }
+    }
+
+    .tag-filter {
+        margin-bottom: 2rem;
+    }
+
+    .article-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .article-card {
+        border: 1px black solid;
+        border-radius: 8px;
+        padding: 1rem 2rem;
     }
 </style>
