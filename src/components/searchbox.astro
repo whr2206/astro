@@ -1,0 +1,30 @@
+---
+---
+<script>
+     import "../scripts/searchBox.alpine.js";
+</script>
+
+<!-- SearchBox.html -->
+<div x-data="searchBox" class="search-box">
+    <input
+      type="search"
+      x-model="searchQuery"
+      @input="search"
+      placeholder="Search blog posts..."
+    />
+</div>
+
+  <style>
+    .search-box {
+        margin-bottom: 2rem;
+    }
+
+    .search-box input[type="search"] {
+        border: 1px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: .5rem;
+        min-width: 600px;
+        max-width: 1200px;
+        min-height: 3rem;
+    }
+  </style>

@@ -4,6 +4,8 @@ import netlify from '@astrojs/netlify';
 
 import preact from '@astrojs/preact';
 
+import alpinejs from '@astrojs/alpinejs';
+
 export default defineConfig({
   site: "https://astro-test-whr.netlify.app",
 
@@ -11,5 +13,5 @@ export default defineConfig({
   // ...
   adapter: netlify(),
 
-  integrations: [preact()]
+  integrations: [preact(), alpinejs()]
 });

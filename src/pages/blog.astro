@@ -1,9 +1,50 @@
 ---
 import BaseLayout from '../layouts/baselayout.astro';
+import SearchBox from '../components/searchbox.astro';
 import '../styles/global.css';
 ---
 <BaseLayout>
     <div class="blog-index-container">
-        
+        <div class="search-bar">
+            <SearchBox />
+        </div>
+        <div class="tag-filter">
+            Filter Tags Here
+        </div>
+        <div class="article-card-container">
+            <div class="article card">
+                <h3>Blog Post title</h3>
+                <p class="blog-summary">
+                    Here's a summary of a blog post. I'm not sure how
+                    long this is going to be, put let's put this Here
+                    so we can determine blah blah words blah blah.
+                </p>
+            </div>
+            <div class="article card">
+                <h3>Blog Post title</h3>
+                <p class="blog-summary">
+                    Here's a summary of a blog post. I'm not sure how
+                    long this is going to be, put let's put this Here
+                    so we can determine blah blah words blah blah.
+                </p>
+            </div>
+            <div class="article card">
+                <h3>Blog Post title</h3>
+                <p class="blog-summary">
+                    Here's a summary of a blog post. I'm not sure how
+                    long this is going to be, put let's put this Here
+                    so we can determine blah blah words blah blah.
+                </p>
+            </div>
+        </div>
     </div>
 </BaseLayout>
+
+<style>
+    .blog-index-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: calc(90px + 2rem);
+        margin-bottom: 2rem;
+    }
+</style>
