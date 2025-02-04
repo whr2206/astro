@@ -4,21 +4,52 @@ import Alpine from 'alpinejs';
 Alpine.data('searchBox', () => ({
   searchQuery: '',
   filteredPosts: [],
-  posts: [
-    // Sample blog posts data
-    { title: 'Post 1', content: 'This is post 1' },
-    { title: 'Post 2', content: 'This is post 2' },
-    // Add more posts here...
-  ],
+  posts: [],
+  isLoading: true,
 
-  init() {
-    this.filteredPosts = this.posts;
+  async init() {
+    try {
+      // Dynamically import all blog post Markdown files
+      const blogPosts = import.meta.glob('../../pages/posts/*.md');
+      
+      // Load and process all blog posts
+      this.posts = await Promise.all(
+        Object.entries(blogPosts).map(async ([path, resolver]) => {
+          const post = await resolver();
+          return {
+            title: post.frontmatter.title,
+            content: post.compiledContent(), // Full text content
+            slug: path.replace('../../pages/posts/', '').replace('.md', ''),
+            date: post.frontmatter.date,
+            description: post.frontmatter.description || ''
+          };
+        })
+      );
+
+      // Initially show all posts
+      this.filteredPosts = this.posts;
+      this.isLoading = false;
+    } catch (error) {
+      console.error('Error loading blog posts:', error);
+      this.isLoading = false;
+    }
   },
 
   search() {
+    // If query is empty, show all posts
+    if (!this.searchQuery.trim()) {
+      this.filteredPosts = this.posts;
+      return;
+    }
+
+    // Perform case-insensitive search across multiple fields
     const query = this.searchQuery.toLowerCase();
     this.filteredPosts = this.posts.filter((post) => {
-      return post.title.toLowerCase().includes(query) || post.content.toLowerCase().includes(query);
+      return (
+        post.title.toLowerCase().includes(query) || 
+        post.content.toLowerCase().includes(query) ||
+        post.description.toLowerCase().includes(query)
+      );
     });
   },
 }));

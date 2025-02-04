@@ -1,12 +1,14 @@
 ---
 import BaseLayout from '../layouts/baselayout.astro';
 import SearchBox from '../components/searchbox.astro';
+import SearchResults from '../components/searchresults.astro';
 import '../styles/global.css';
 ---
 <BaseLayout>
     <div class="blog-index-container">
         <div class="search-bar">
             <SearchBox />
+            <SearchResults />
         </div>
         <div class="tag-filter">
             Filter Tags Here
