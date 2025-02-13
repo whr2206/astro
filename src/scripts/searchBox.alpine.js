@@ -16,9 +16,10 @@ Alpine.data('searchBox', () => ({
       this.posts = await Promise.all(
         Object.entries(blogPosts).map(async ([path, resolver]) => {
           const post = await resolver();
+          const content = await post.compiledContent(); // Await here!
           return {
             title: post.frontmatter.title,
-            content: post.compiledContent(), // Full text content
+            content: content,  // Now content holds the actual text
             slug: path.replace('../../pages/posts/', '').replace('.md', ''),
             date: post.frontmatter.date,
             description: post.frontmatter.description || ''
