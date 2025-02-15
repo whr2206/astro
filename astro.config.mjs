@@ -6,6 +6,8 @@ import preact from '@astrojs/preact';
 
 import alpinejs from '@astrojs/alpinejs';
 
+import tailwind from '@astrojs/tailwind';
+
 export default defineConfig({
   site: "https://astro-test-whr.netlify.app",
 
@@ -13,5 +15,6 @@ export default defineConfig({
   // ...
   adapter: netlify(),
 
-  integrations: [preact(), alpinejs()]
+  integrations: [preact(), alpinejs(), tailwind()]
+
 });

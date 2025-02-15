@@ -13,6 +13,7 @@
     "@astrojs/netlify": "^6.0.1",
     "@astrojs/preact": "^4.0.1",
     "@astrojs/rss": "^4.0.11",
+    "@astrojs/tailwind": "^6.0.0",
     "@types/alpinejs": "^3.13.11",
     "alpinejs": "^3.14.8",
     "astro": "^5.1.2",
