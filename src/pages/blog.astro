@@ -6,7 +6,13 @@ import '../styles/global.css';
     <div class="blog-index-container">
         <h1>Sauce Blog</h1>
 
-        <sl-input class="search-box" placeholder="Search posts" size="large" pill></sl-input>
+        <div class="search-wrapper">
+          <sl-input class="search-box" placeholder="Search posts" size="large" pill>
+          </sl-input>
+          <sl-button class="search-button" size="large" pill>
+            <sl-icon name="search"></sl-icon>
+          </sl-button>
+        </div>
 
         <div class="tag-filter-container">
             <sl-button variant="default" size="large">Localization</sl-button>
@@ -79,8 +85,18 @@ import '../styles/global.css';
     }
 }
 
+.search-wrapper {
+  display: flex;
+}
+
 .search-box {
     padding-bottom: 3rem;
+    flex-grow: 1;
+}
+
+.search-button {
+  margin-bottom: 0;
+  padding: 0 .33rem;
 }
 
 .tag-filter-container {
