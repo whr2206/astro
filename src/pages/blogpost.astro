@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/baselayout.astro';
+import '../styles/global.css';
+---
+<BaseLayout>
+    <div class="single-post-container">
+        <h1 class="post-title">Blog Post Title</h1>
+        <div class="tag-topics">
+            <sl-button size="small" pill>Tag Topic</sl-button>
+            <sl-button size="small" pill>Tag Topic</sl-button>
+            <sl-button size="small" pill>Tag Topic</sl-button>
+        </div>
+       
+        <div class="single-post-content">
+            <p>
+                Do irure tempor pariatur deserunt cillum. Qui sit irure dolor quis enim incididunt. Aliquip incididunt deserunt ea aliqua non excepteur mollit eiusmod ad commodo laborum duis est occaecat. Amet pariatur nostrud commodo laborum amet aliquip non. Commodo culpa amet reprehenderit aliquip fugiat irure ipsum cupidatat nulla. Consequat pariatur ut do proident.
+            </p>
+            <p>
+                Esse ullamco deserunt labore culpa labore veniam. Reprehenderit elit elit ipsum cupidatat veniam. Elit et est non fugiat deserunt non deserunt ut dolore in. Anim aliquip occaecat cupidatat laborum tempor laborum.
+            </p>
+            <p>
+                Laboris ipsum ullamco sunt commodo officia cillum consectetur sit ea minim dolore Lorem. Commodo minim excepteur ea nostrud ad non adipisicing voluptate voluptate et officia elit. Proident nostrud officia quis aute occaecat tempor laboris dolor laborum excepteur. Tempor sint consectetur ex officia magna culpa exercitation quis.
+            </p>
+            <p>
+                Officia veniam quis ipsum laborum proident dolore. In cillum reprehenderit quis laboris dolore voluptate duis magna et deserunt nulla fugiat magna. Veniam consectetur magna aute laboris consequat elit duis esse. Cupidatat eu nulla ad magna ea reprehenderit ex pariatur magna adipisicing eiusmod. Voluptate Lorem fugiat officia pariatur consequat dolore aliquip cupidatat mollit.
+            </p>
+            <p>
+                Aliqua cillum ipsum nulla voluptate. Ex amet est pariatur amet culpa est ullamco amet et. Voluptate veniam culpa et proident anim deserunt duis aliquip duis irure ea. Mollit nostrud nulla magna ullamco veniam ipsum. Qui ullamco amet irure qui dolore. Nisi aliqua quis Lorem incididunt officia reprehenderit sit nostrud sint aute.
+            </p>
+            <p>
+                Sunt occaecat aliqua sint qui veniam sunt nisi eu consectetur voluptate et incididunt nostrud ea. Anim officia cupidatat eiusmod enim occaecat nostrud labore. Minim deserunt occaecat occaecat dolore. Veniam fugiat in velit ipsum veniam dolor voluptate aute sunt labore anim excepteur exercitation reprehenderit. Eiusmod reprehenderit proident consequat quis voluptate occaecat.
+            </p>
+
+        </div><!-- Post Content Container -->
+    </div><!-- Single Post Container -->
+</BaseLayout>
+
+<style>
+.single-post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 3.5rem;
+}
+
+@media (max-width: 1200px) {
+    .single-post-container {
+        max-width: 90%;
+    }
+}
+
+.post-title {
+    margin-top: .20rem;
+    margin-bottom: .33rem;
+}
+
+.single-post-content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+</style>
