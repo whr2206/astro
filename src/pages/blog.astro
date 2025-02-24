@@ -4,7 +4,7 @@ import '../styles/global.css';
 ---
 <BaseLayout>
     <div class="blog-index-container">
-        <h1>Sauce Blog</h1>
+        <h1 class="blog-title">Sauce Blog</h1>
 
         <div class="search-wrapper">
           <sl-input class="search-box" placeholder="Search posts" size="large" pill>
@@ -15,58 +15,30 @@ import '../styles/global.css';
         </div>
 
         <div class="tag-filter-container">
-            <sl-button variant="default" size="large">Localization</sl-button>
+            <sl-button class="all-posts-btn" variant="default" size="large">All Posts</sl-button>
             <sl-button variant="default" size="large">CAT tools</sl-button>
-            <sl-button variant="default" size="large">AI translation</sl-button>
+            <sl-button variant="default" size="large">AI tools</sl-button>
             <sl-button variant="default" size="large">QA & testing</sl-button>
+            <sl-button variant="default" size="large">MTPE</sl-button>
         </div>
 
         <div class="recent-posts-container">
-            <sl-card class="card-overview">
-                <img
-                  slot="image"
-                  src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                  alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                />
-              
-                <strong>Mittens</strong><br />
-                Magna commodo consectetur magna quis sint adipisicing. Elit et dolor eu occaecat elit irure. Excepteur sint culpa officia consequat irure et dolor velit.
-                <br />
-              
-                <div slot="footer">
-                  <sl-button pill>Read more</sl-button>
-                </div>
-              </sl-card>
-              <sl-card class="card-overview">
-                <img
-                  slot="image"
-                  src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                  alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                />
-              
-                <strong>Mittens</strong><br />
-                Velit exercitation est consectetur eiusmod ea aliquip occaecat eiusmod labore. Laboris esse consectetur occaecat deserunt irure ut fugiat.
-                <br />
-              
-                <div slot="footer">
-                  <sl-button pill>Read More</sl-button>
-                </div>
-              </sl-card>
-              <sl-card class="card-overview">
-                <img
-                  slot="image"
-                  src="https://images.unsplash.com/photo-1559209172-0ff8f6d49ff7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80"
-                  alt="A kitten sits patiently between a terracotta pot and decorative grasses."
-                />
-              
-                <strong>Mittens</strong><br />
-                Enim excepteur deserunt excepteur officia sit consequat tempor nostrud qui excepteur consequat. Quis Lorem est magna duis et dolore commodo.
-                <br />
-              
-                <div slot="footer">
-                  <sl-button pill>Read more</sl-button>
-                </div>
-              </sl-card>
+          <div class="post-preview-container">
+            <img class="post-preview-image" src="https://placehold.co/520x275/grey/white" alt="placeholder img">
+            <p class="post-preview-tag">Post Tags</p>
+            <h3 class="post-preview-title">A Blog Post Title ;)</h3>
+            <p class="post-preview-text">
+              Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
+            </p>
+          </div>
+          <div class="post-preview-container">
+            <img class="post-preview-image" src="https://placehold.co/520x275/grey/white" alt="placeholder img">
+            <p class="post-preview-tag">Post Tags</p>
+            <h3 class="post-preview-title">A Blog Post Title ;)</h3>
+            <p class="post-preview-text">
+              Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
+            </p>
+          </div>
         </div>
 
     </div>
@@ -85,12 +57,16 @@ import '../styles/global.css';
     }
 }
 
+.blog-title {
+  text-align: center;
+}
+
 .search-wrapper {
   display: flex;
 }
 
 .search-box {
-    padding-bottom: 3rem;
+    padding-bottom: 2.25rem;
     flex-grow: 1;
 }
 
@@ -108,6 +84,20 @@ sl-button {
     padding: .65rem .65rem;
 }
 
+sl-button::part(base):hover {
+  background-color: var(--sauce-cyan);
+}
+
+.all-posts-btn::part(base) {
+  background-color: var(--sauce-powder);
+  border: 1px solid black;
+}
+
+.all-posts-btn::part(base):hover {
+  background-color: var(--sauce-blue);
+  color: var(--sauce-cyan);
+}
+
 .recent-posts-container {
     display: flex;
     justify-content: space-around;
@@ -122,9 +112,22 @@ sl-button {
     }
 }
 
-.card-overview {
-    max-width: 425px;
-    padding: 0 .65rem;
-    margin-bottom: 1.5rem;
+.post-preview-title {
+  font-size: 1.75rem;
+  margin-bottom: -.33rem;
+}
+
+.post-preview-image {
+  border-radius: .33rem;
+  margin-bottom: -.33rem;
+}
+
+.post-preview-tag {
+  margin-bottom: -.66rem;
+}
+
+.post-preview-text {
+  line-height: 1.66rem;
+  max-width: 520px;
 }
 </style>
