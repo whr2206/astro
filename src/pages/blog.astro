@@ -25,16 +25,20 @@ import '../styles/global.css';
         <div class="recent-posts-container">
           <div class="post-preview-container">
             <img class="post-preview-image" src="https://placehold.co/520x275/grey/white" alt="placeholder img">
-            <p class="post-preview-tag">Post Tags</p>
-            <h3 class="post-preview-title">A Blog Post Title ;)</h3>
+            <time class="date-meta" datetime="2025-02-25">February 25, 2025</time>
+            <br>
+            <span class="post-preview-tag">Post Tags</span>
+            <h2 class="post-preview-title">A Blog Post Title ;)</h2>
             <p class="post-preview-text">
               Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
             </p>
           </div>
           <div class="post-preview-container">
             <img class="post-preview-image" src="https://placehold.co/520x275/grey/white" alt="placeholder img">
-            <p class="post-preview-tag">Post Tags</p>
-            <h3 class="post-preview-title">A Blog Post Title ;)</h3>
+            <time class="date-meta" datetime="2022-07-25">February 25, 2025</time>
+            <br>
+            <span class="post-preview-tag">Post Tags</span>
+            <h2 class="post-preview-title">A Blog Post Title ;)</h2>
             <p class="post-preview-text">
               Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
             </p>
@@ -113,8 +117,11 @@ sl-button::part(base):hover {
 }
 
 .post-preview-title {
-  font-size: 1.75rem;
   margin-bottom: -.33rem;
+}
+
+.post-preview-title h2 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem); /* overridden clamp value */
 }
 
 .post-preview-image {
@@ -122,8 +129,13 @@ sl-button::part(base):hover {
   margin-bottom: -.33rem;
 }
 
+.date-meta {
+  display: block;
+  padding-top: 1.5rem;
+}
+
 .post-preview-tag {
-  margin-bottom: -.66rem;
+  margin-bottom: -.33rem;
 }
 
 .post-preview-text {
