@@ -43,6 +43,26 @@ import '../styles/global.css';
               Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
             </p>
           </div>
+          <div class="post-preview-container">
+            <img class="post-preview-image" src="https://placehold.co/520x275/grey/white" alt="placeholder img">
+            <time class="date-meta" datetime="2022-07-25">February 25, 2025</time>
+            <br>
+            <span class="post-preview-tag">Post Tags</span>
+            <h2 class="post-preview-title">A Blog Post Title ;)</h2>
+            <p class="post-preview-text">
+              Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
+            </p>
+          </div>
+          <div class="post-preview-container">
+            <img class="post-preview-image" src="https://placehold.co/520x275/grey/white" alt="placeholder img">
+            <time class="date-meta" datetime="2022-07-25">February 25, 2025</time>
+            <br>
+            <span class="post-preview-tag">Post Tags</span>
+            <h2 class="post-preview-title">A Blog Post Title ;)</h2>
+            <p class="post-preview-text">
+              Esse adipisicing quis mollit fugiat Lorem dolore et sint non id qui Lorem amet. Exercitation aliqua adipisicing duis Lorem laborum cillum aute laborum nostrud qui qui.
+            </p>
+          </div>
         </div>
 
     </div>
@@ -104,8 +124,14 @@ sl-button::part(base):hover {
 
 .recent-posts-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     padding-bottom: 3rem;
+}
+
+.post-preview-container {
+    flex-basis: 45%;
+    margin-bottom: 2.5rem;
 }
 
 @media (max-width: 768px) {
